@@ -15,7 +15,7 @@ export default function FormLogin() {
 		<Container>
 			<p>Sign in</p>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<InputField label='E-mail' name='email' register={register} />
+				<InputField label='ID' name='id' register={register} />
 				<InputField
 					label='Senha'
 					name='password'
