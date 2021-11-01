@@ -1,6 +1,6 @@
 # Police System - GTA 5 Online
 
-<p>Project using React to build police intern system. .
+<p>Fron-end project using React to build a police intern system.
 </p>
 
 <p>Libs what we using here at moment:</p>
