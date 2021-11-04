@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
-export default function InputField({ label, name, register, type }) {
-	if (!type) type = 'text'
-	if (!register) register = 0
-
+export default function InputField({
+	label,
+	name,
+	register = 'name',
+	type = 'text',
+}) {
 	return (
 		<Box>
 			<label>{label}</label>

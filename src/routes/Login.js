@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import FormLogin from './../components/FormLogin'
 import brandImage from './../assets/images/brand-lion.jpg'
-import { getByLabelText } from '@testing-library/dom'
 
 export default function Login() {
 	return (
@@ -18,7 +17,6 @@ export default function Login() {
 
 			<FormSection>
 				<FormLogin />
-
 				<ForgotPassword>
 					<Link to='/change-password'>Esqueceu sua senha?</Link>
 					<Link to='/registration'>Faça seu cadastro</Link>

@@ -3,12 +3,19 @@ import styled from 'styled-components'
 
 import InputField from './InputField'
 import Button from './Button'
+import { login } from '../services/user'
 
 export default function FormLogin() {
 	const { register, handleSubmit } = useForm()
 
-	const onSubmit = data => {
-		console.log('dados formulario', data)
+	const onSubmit = async data => {
+		try {
+			const resp = await login(data)
+			console.log(resp.data)
+			console.log('dados formulario', data)
+		} catch (error) {
+			alert(error.message)
+		}
 	}
 
 	return (
