@@ -1,13 +1,23 @@
 import styled from 'styled-components'
+import { useHistory } from 'react-router'
+
 // import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 
 import SideBar from '../components/SideBar'
 
 export default function Dashboard({ content }) {
+	const history = useHistory()
+
+	const handleLogout = () => {
+		localStorage.removeItem('token')
+		history.push('/')
+	}
+
 	return (
 		<>
 			<TopBar>
 				<h1>Will be a dashboard</h1>
+				<button onClick={handleLogout}>Sair</button>
 			</TopBar>
 			<Main>
 				<SideBar />

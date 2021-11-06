@@ -20,4 +20,8 @@ const Box = styled.div`
 		border-radius: 5px;
 		outline: none;
 	}
+
+	button:hover {
+		cursor: pointer;
+	}
 `

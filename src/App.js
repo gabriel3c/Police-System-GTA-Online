@@ -13,11 +13,13 @@ import EditarPerfil from './components/EditarPerfil'
 import CodigoPenal from './components/CodigoPenal'
 import RegistroOcorrencia from './components/RegistroOcorrencia'
 
+import AuthContext from './contexts/AuthContext'
+
 import './styles/global.css'
 
 function App() {
 	return (
-		<div className='App'>
+		<AuthContext.Provider value={true}>
 			<Router>
 				<Switch>
 					<Route exact path='/login' component={Login} />
@@ -56,7 +58,7 @@ function App() {
 					</PrivateRoute>
 				</Switch>
 			</Router>
-		</div>
+		</AuthContext.Provider>
 	)
 }
 

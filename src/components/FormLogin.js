@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
+import { useHistory } from 'react-router'
 
 import InputField from './InputField'
 import Button from './Button'
@@ -7,12 +8,15 @@ import { login } from '../services/user'
 
 export default function FormLogin() {
 	const { register, handleSubmit } = useForm()
+	const history = useHistory()
 
 	const onSubmit = async data => {
 		try {
 			const resp = await login(data)
 			console.log(resp.data)
 			console.log('dados formulario', data)
+			localStorage.setItem('token', true)
+			history.push('/')
 		} catch (error) {
 			alert(error.message)
 		}
