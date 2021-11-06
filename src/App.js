@@ -4,6 +4,7 @@ import Dashboard from './routes/Dashboard'
 import Login from './routes/Login'
 import Registration from './routes/Registration'
 
+import PrivateRoute from './components/PrivateRoute'
 import MeusPontos from './components/MeusPontos'
 import PontosAbertos from './components/PontosAbertos'
 import PontosGeral from './components/PontosGeral'
@@ -22,37 +23,37 @@ function App() {
 					<Route exact path='/login' component={Login} />
 					<Route exact path='/registration' component={Registration} />
 
-					<Route exact path='/'>
+					<PrivateRoute exact path='/'>
 						<Dashboard />
-					</Route>
+					</PrivateRoute>
 
-					<Route exact path='/pontos-abertos'>
+					<PrivateRoute exact path='/pontos-abertos'>
 						<Dashboard content={<PontosAbertos />} />
-					</Route>
+					</PrivateRoute>
 
-					<Route exact path='/meus-pontos'>
+					<PrivateRoute exact path='/meus-pontos'>
 						<Dashboard content={<MeusPontos />} />
-					</Route>
+					</PrivateRoute>
 
-					<Route exact path='/pontos-geral'>
+					<PrivateRoute exact path='/pontos-geral'>
 						<Dashboard content={<PontosGeral />} />
-					</Route>
+					</PrivateRoute>
 
-					<Route exact path='/police-helper'>
+					<PrivateRoute exact path='/police-helper'>
 						<Dashboard content={<PoliceHelper />} />
-					</Route>
+					</PrivateRoute>
 
-					<Route exact path='/editar-perfil'>
+					<PrivateRoute exact path='/editar-perfil'>
 						<Dashboard content={<EditarPerfil />} />
-					</Route>
+					</PrivateRoute>
 
-					<Route exact path='/codigo-penal'>
+					<PrivateRoute exact path='/codigo-penal'>
 						<Dashboard content={<CodigoPenal />} />
-					</Route>
+					</PrivateRoute>
 
-					<Route exact path='/registro-ocorrencia'>
+					<PrivateRoute exact path='/registro-ocorrencia'>
 						<Dashboard content={<RegistroOcorrencia />} />
-					</Route>
+					</PrivateRoute>
 				</Switch>
 			</Router>
 		</div>
